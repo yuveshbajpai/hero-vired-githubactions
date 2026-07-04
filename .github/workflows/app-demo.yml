@@ -1,0 +1,23 @@
+name: push trigger demo
+
+on:
+ push:
+  branches:
+   - main
+
+jobs:
+  demo-job:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: show message
+        run: echo "workflow started"
+      - name: list files
+        run: ls -lrth
+      - name: read files
+        run: cat app.txt
+
+
+      
